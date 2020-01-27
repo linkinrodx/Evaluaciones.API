@@ -13,6 +13,7 @@ namespace Proyecto.Evaluacion.API.Common
         public MappingsProfile()
         {
             CreateMap<Models.Evaluacion, EvaluacionViewModel>();
+            CreateMap<Models.Usuario, UsuarioViewModel>();
         }
     }
 }

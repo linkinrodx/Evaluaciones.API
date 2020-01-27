@@ -35,6 +35,7 @@ namespace Proyecto.Evaluacion.API
 
             services.AddDbContext<EvaluacionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SistemaEvaluaciones")));
             services.AddTransient<IEvaluacionRepository, EvaluacionRepository>();
+            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
 
             services.AddAutoMapper(typeof(Startup));
             //services.AddControllersWithViews();

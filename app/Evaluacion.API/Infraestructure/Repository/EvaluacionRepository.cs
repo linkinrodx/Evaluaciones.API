@@ -27,8 +27,8 @@ namespace Proyecto.Evaluacion.API.Infraestructure.Repository
         public List<Models.Evaluacion> GetListEvaluacion(GetListEvaluacionRequest request)
         {
             var result = dbContext.Evaluacion.Where(o =>
-            (request.FechaInicio == null || request.FechaInicio <= o.FechaCreacion) &&
-            (request.FechaFin == null || o.FechaCreacion < request.FechaFin)
+            (request.FechaInicio == null || Convert.ToDateTime(request.FechaInicio).Date <= o.FechaCreacion) &&
+            (request.FechaFin == null || Convert.ToDateTime(request.FechaFin).Date.AddDays(1) < request.FechaFin)
             ).ToList();
 
             return result;

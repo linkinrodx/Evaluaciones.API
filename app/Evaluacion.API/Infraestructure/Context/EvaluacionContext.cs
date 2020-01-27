@@ -49,7 +49,6 @@ namespace Proyecto.Evaluacion.API.Infraestructure.Context
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nombres)
-                    .IsRequired()
                     .HasMaxLength(200)
                     .IsUnicode(false);
             });
